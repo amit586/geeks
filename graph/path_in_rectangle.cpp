@@ -2,27 +2,22 @@
 #define pii pair<int,int>
 using namespace std;
 
-void makeCircles(pair<int,int> centre,int raduis,vector<vector<int>> &maze)
+bool solve(vector<vector<int>> &maze,map<pii> &c,int r)
 {
 	
-		if(pow(x-i,2)+pow(y-j,2)<=pow(r,2))
-			maze[i][j]=-1;
-
 }
+
 
 int main(int argc, char const *argv[])
 {
 	int m,n,k,r,x,y;
 	cin>>m>>n>>k>>r;
-	vector<pii> c(k);
+	set<pii> c(k);
 	for(int i=0;i<k;i++)
-		cin>>x>>y,c[i]=make_pair(x,y);
+		cin>>x>>y,c.insert(make_pair(x,y));
 	vector<vector<int>>  maze(m,vector<int>(n,0));
-	for(int i=0;i<k;i++)
-	{
-		makeCircles(c[i],r,maze);
-	}
-
+	
+	cout<<solve(maze,c,r)<<endl;
 
 	return 0;
 }
